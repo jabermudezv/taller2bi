@@ -1,16 +1,11 @@
-# This is a sample Python script.
+import pandas as pd
 
-# Press Mayús+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+name_file = "C:/Users/Javier/Downloads/Casos_positivos_de_COVID-19_en_Colombia.csv"
 
+data_df = pd.read_csv(name_file)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+print("First data in dataframe: \n %s" %data_df.head(2))
+print("List of data types in dataframe: \n %s" %data_df.dtypes)
 
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+fecha_notificacion = data_df['Fecha de notificacion']
+print(fecha_notificacion)
